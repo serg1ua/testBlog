@@ -55,18 +55,21 @@ class PostDetails extends React.Component {
         <Appbar />
         <Card className="card">
           <CardContent style={{margin: 'auto'}}>
-            <h3>{post.title}</h3>
+            <Typography variant="h6" component="p" >
+              {post.title}
+            </Typography>
             <hr />
             <Typography component="p" >
               {post.body}
             </Typography>
             <hr />
             <h4>Comments:</h4>
-           {comment ?  (<Typography component="p">
-              {comment.body}
-              
-            </Typography>) :
-            (<div></div>)}
+            {comment ? 
+              (<Typography component="p">
+                {comment.body}
+              </Typography>) :
+              (<div></div>)
+            }
             <form
               onSubmit={this.submit}
               className="form"

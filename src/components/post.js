@@ -18,7 +18,9 @@ class Post extends React.Component {
     return (
       <Card  className="card">
       <CardContent>
-        <h3>{title}</h3><hr />
+        <Typography variant="h6">
+          {title}
+        </Typography><hr />
         <Typography  component="p">
           {body}
         </Typography><hr />
