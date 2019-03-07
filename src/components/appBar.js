@@ -9,9 +9,15 @@ class Appbar extends React.Component {
   render() {
     return (
       <div className='appbar'>
-      <AppBar position="static" color="default">
+      <AppBar 
+        position="static"
+        color="default"
+      >
         <Toolbar>
-          <Typography variant="h6" color="inherit">
+          <Typography
+            variant="h6"
+            color="inherit"
+          >
             <Link
               style={{textDecoration: 'none', color: 'black'}}
               title="see all posts"

@@ -19,6 +19,7 @@ class PostDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
+      postId: 1,
       comment: ''
     });
 
@@ -38,12 +39,12 @@ class PostDetails extends React.Component {
 
   submit = (event) => {
     event.preventDefault();
+    const postId = this.state.postId;
     const body = this.state.comment;
-    const id = id;
     this.setState({
       comment: ''
     });
-    this.props.dispatch(reducer.submitComment(body, id));
+    this.props.dispatch(reducer.submitComment(postId, body));
   }
 
   render() {

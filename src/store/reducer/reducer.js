@@ -18,6 +18,7 @@ export default function reduce(state = initialState, action = {}) {
         post: action.post
       });
     case types.SUBMIT_COMMENT:
+      console.log(action.response);
       return state.merge({
         comment: action.response
       });

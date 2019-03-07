@@ -48,10 +48,18 @@ class NewPost extends React.Component {
       <div className="new-post">
         <Appbar />
           <div>
-          <Card className="card">
-            <CardHeader className="cardHeader" title="New post"/>
+          <Card
+            className="card">
+            <CardHeader
+              className="cardHeader"
+              title="New post"
+            />
             <CardContent>
-              <form className="form" onSubmit={this.submitPost} autoComplete="off">
+              <form
+                className="form"
+                onSubmit={this.submitPost}
+                autoComplete="off"
+              >
                 <div>
                   <TextField 
                     style={{width: '80%'}}

@@ -33,14 +33,14 @@ class HttpService {
     return promise;
   }
 
-  submitComment = (body, id) => {
+  submitComment = (postId, body) => {
     var promise = new Promise((resolve, reject) => {
       fetch(`${URL}/comments`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ body, id })
+          body: JSON.stringify({ postId, body })
         })
         .then(response => {
           resolve(response.json());

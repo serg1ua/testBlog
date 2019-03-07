@@ -16,9 +16,9 @@ export const getPostById = (id) => {
   };
 };
 
-export const submitComment = (body, id) => {
+export const submitComment = (postId, body) => {
   return async(dispatch) => {
-    const response = await http.submitComment(body, id);
+    const response = await http.submitComment(postId, body);
     dispatch({ type: types.SUBMIT_COMMENT, response });
   };
 };
