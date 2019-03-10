@@ -18,12 +18,10 @@ export default function reduce(state = initialState, action = {}) {
         post: action.post
       });
     case types.SUBMIT_COMMENT:
-      console.log(action.response);
       return state.merge({
         comment: action.response
       });
     case types.NEW_POST:
-      console.log(action.newPost);
       return state.merge({
         post: action.newPost
       });
@@ -38,3 +36,5 @@ export const getPostById = (state) => {
   const { post, comment } = state.reducer;
   return { post, comment };
 };
+
+export const createNewPost = (state) => state.reducer.post;

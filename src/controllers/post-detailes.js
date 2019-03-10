@@ -98,8 +98,6 @@ class PostDetails extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  const detailed = reducers.getPostById(state);
-  return detailed;
-}
+const mapStateToProps = (state) => reducers.getPostById(state);
+
 export default connect(mapStateToProps)(PostDetails);

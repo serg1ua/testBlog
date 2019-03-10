@@ -32,7 +32,7 @@ class NewPost extends React.Component {
     const title = this.state.title;
     const body = this.state.body;
     this.props.dispatch(actions.submitNewPost(title, body));
-    window.location.pathname = '/';
+    setTimeout(() => window.location.pathname = '/', 500);
   }
 
   postData = (event) => {
@@ -106,7 +106,8 @@ class NewPost extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return state;
-}
+const mapStateToProps = (state) => reducers.createNewPost(state);
+
 export default connect(mapStateToProps)(NewPost);
+
+// https://documenter.getpostman.com/view/1917440/RzteTChV

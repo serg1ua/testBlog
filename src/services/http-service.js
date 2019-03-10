@@ -11,61 +11,49 @@ class HttpService {
     return instance;
   }
 
-  getPosts = () => {
-    var promise = new Promise((resolve, reject) => {
-      fetch(`${URL}/posts`)
-        .then(response => {
-          resolve(response.json());
-          reject({ error: 'error' });
-        });
-    });
-    return promise;
-  }
+  getPosts = () => new Promise((resolve, reject) => {
+    fetch(`${URL}/posts`)
+      .then(response => {
+        resolve(response.json());
+        reject({ error: 'error' });
+      });
+  });
 
-  getPostById = (id) => {
-    var promise = new Promise((resolve, reject) => {
-      fetch(`${URL}/posts/${id}`)
-        .then(response => {
-          resolve(response.json());
-          reject({ error: 'error' });
-        });
-    });
-    return promise;
-  }
+  getPostById = (id) => new Promise((resolve, reject) => {
+    fetch(`${URL}/posts/${id}`)
+      .then(response => {
+        resolve(response.json());
+        reject({ error: 'error' });
+      });
+  });
 
-  submitComment = (postId, body) => {
-    var promise = new Promise((resolve, reject) => {
-      fetch(`${URL}/comments`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ postId, body })
-        })
-        .then(response => {
-          resolve(response.json());
-          reject({ error: 'error' });
-        });
-    });
-    return promise;
-  }
+  submitComment = (postId, body) => new Promise((resolve, reject) => {
+    fetch(`${URL}/comments`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ postId, body })
+      })
+      .then(response => {
+        resolve(response.json());
+        reject({ error: 'error' });
+      });
+  });
 
-  submitNewPost = (title, body) => {
-    var promise = new Promise((resolve, reject) => {
-      fetch(`${URL}/posts`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ title, body })
-        })
-        .then(response => {
-          resolve(response.json());
-          reject({ error: 'error' });
-        });
-    });
-    return promise;
-  }
+  submitNewPost = (title, body) => new Promise((resolve, reject) => {
+    fetch(`${URL}/posts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ title, body })
+      })
+      .then(response => {
+        resolve(response.json());
+        reject({ error: 'error' });
+      });
+  });
 }
 
 

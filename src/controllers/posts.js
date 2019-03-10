@@ -28,11 +28,6 @@ class Posts extends React.Component {
   }
 }
 
-
-function mapStateToProps(state) {
-  const posts = reducers.getPosts(state);
-  console.log(posts);
-  return posts;
-}
+const mapStateToProps = (state) => reducers.getPosts(state);
 
 export default connect(mapStateToProps)(Posts);
