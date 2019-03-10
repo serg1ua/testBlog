@@ -10,7 +10,8 @@ import autoBind from 'react-autobind';
 
 import './controllers.css';
 
-import * as reducer from '../store/reducer/actions';
+import * as actions from '../store/reducer/actions';
+import * as reducers from '../store/reducer/reducer';
 
 import Appbar from '../components/appBar';
 
@@ -30,7 +31,7 @@ class NewPost extends React.Component {
     event.preventDefault();
     const title = this.state.title;
     const body = this.state.body;
-    this.props.dispatch(reducer.submitNewPost(title, body));
+    this.props.dispatch(actions.submitNewPost(title, body));
     window.location.pathname = '/';
   }
 

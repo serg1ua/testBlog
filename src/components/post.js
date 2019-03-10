@@ -8,10 +8,6 @@ import Typography from '@material-ui/core/Typography';
 
 class Post extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { id, title, body } = this.props.post;
     const link = `/posts/${id}`;

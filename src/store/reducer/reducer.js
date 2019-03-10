@@ -31,3 +31,10 @@ export default function reduce(state = initialState, action = {}) {
       return state;
   }
 }
+
+export const getPosts = (state) => state.reducer;
+
+export const getPostById = (state) => {
+  const { post, comment } = state.reducer;
+  return { post, comment };
+};

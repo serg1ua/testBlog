@@ -8,11 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import autoBind from 'react-autobind';
 
-import * as reducer from '../store/reducer/actions';
+import * as actions from '../store/reducer/actions';
+import * as reducers from '../store/reducer/reducer';
 
 import Appbar from '../components/appBar';
-
-let id;
 
 class PostDetails extends React.Component {
 
@@ -27,8 +26,8 @@ class PostDetails extends React.Component {
   }
   componentDidMount() {
     const { url } = this.props.match;
-    id = url.replace('/posts/', '');
-    this.props.dispatch(reducer.getPostById(id));
+    const id = url.replace('/posts/', '');
+    this.props.dispatch(actions.getPostById(id));
   }
 
   handleChange = (event) => {
@@ -44,12 +43,11 @@ class PostDetails extends React.Component {
     this.setState({
       comment: ''
     });
-    this.props.dispatch(reducer.submitComment(postId, body));
+    this.props.dispatch(actions.submitComment(postId, body));
   }
 
   render() {
-    const { post, comment } = this.props.reducer;
-
+    const { post, comment } = this.props;
     return (
       <div className="post-detailes">
         <Appbar />
@@ -101,6 +99,7 @@ class PostDetails extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return state;
+  const detailed = reducers.getPostById(state);
+  return detailed;
 }
 export default connect(mapStateToProps)(PostDetails);

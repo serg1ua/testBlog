@@ -1,24 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import autoBind from 'react-autobind';
 
 import Post from '../components/post';
 
-import * as reducer from '../store/reducer/actions';
+import * as actions from '../store/reducer/actions';
+import * as reducers from '../store/reducer/reducer';
 
 class Posts extends React.Component {
 
-  constructor(props) {
-    super(props);
-    autoBind(this);
-  }
-
   componentDidMount() {
-    this.props.dispatch(reducer.getPosts());
+    this.props.dispatch(actions.getPosts());
   }
 
   posts = () => {
-    const { posts } = this.props.reducer;
+    const { posts } = this.props;
     return posts.map(post => (
       <Post post={post} key={post.id} />
     ));
@@ -35,7 +30,9 @@ class Posts extends React.Component {
 
 
 function mapStateToProps(state) {
-  return state;
+  const posts = reducers.getPosts(state);
+  console.log(posts);
+  return posts;
 }
 
 export default connect(mapStateToProps)(Posts);
