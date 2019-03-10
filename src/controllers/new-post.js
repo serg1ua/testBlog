@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -48,9 +47,8 @@ class NewPost extends React.Component {
     return (
       <div className="new-post">
         <Appbar />
-          <div>
-          <Card
-            className="card">
+        <div>
+          <Card className="card">
             <CardHeader
               className="cardHeader"
               title="New post"
@@ -62,7 +60,7 @@ class NewPost extends React.Component {
                 autoComplete="off"
               >
                 <div>
-                  <TextField 
+                  <TextField
                     style={{width: '80%'}}
                     label="Post title"
                     className="title"
@@ -89,16 +87,16 @@ class NewPost extends React.Component {
                     required
                   />
                 </div>
-                  <Button
-                    className="submit-button"
-                    type="submit"
-                    size="medium"
-                    variant="contained"
-                  >
-                    Submit
-                  </Button>
+                <Button
+                  className="submit-button"
+                  type="submit"
+                  size="medium"
+                  variant="contained"
+                >
+                  Submit
+                </Button>
               </form>
-            </CardContent>  
+            </CardContent>
           </Card>
         </div>
       </div>

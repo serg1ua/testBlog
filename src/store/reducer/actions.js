@@ -17,7 +17,6 @@ export const submitComment = (postId, body) => async(dispatch) => {
   dispatch({ type: types.SUBMIT_COMMENT, response });
 };
 
-
 export const submitNewPost = (title, body) => async(dispatch) => {
   const newPost = await http.submitNewPost(title, body);
   dispatch({ type: types.NEW_POST, newPost });

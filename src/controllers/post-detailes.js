@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
@@ -53,21 +52,20 @@ class PostDetails extends React.Component {
         <Appbar />
         <Card className="card">
           <CardContent style={{margin: 'auto'}}>
-            <Typography variant="h6" component="p" >
+            <Typography variant="h6" component="p">
               {post.title}
             </Typography>
-            <hr />
-            <Typography component="p" >
+            <hr/>
+            <Typography component="p">
               {post.body}
             </Typography>
-            <hr />
+            <hr/>
             <h4>Comments:</h4>
-            {comment ? 
-              (<Typography component="p">
+            {comment && (
+              <Typography component="p">
                 {comment.body}
-              </Typography>) :
-              (<div></div>)
-            }
+              </Typography>
+            )}
             <form
               onSubmit={this.submit}
               className="form"
@@ -89,7 +87,7 @@ class PostDetails extends React.Component {
                 size = "small"
               >
                 submit comment
-              </Button> 
+              </Button>
             </form>
           </CardContent>
         </Card>

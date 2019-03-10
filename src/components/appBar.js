@@ -9,35 +9,35 @@ class Appbar extends React.Component {
   render() {
     return (
       <div className='appbar'>
-      <AppBar 
-        position="static"
-        color="default"
-      >
-        <Toolbar>
-          <Typography
-            variant="h6"
-            color="inherit"
-          >
-            <Link
-              style={{textDecoration: 'none', color: 'black'}}
-              title="see all posts"
-              to="/"
+        <AppBar
+          position="static"
+          color="default"
+        >
+          <Toolbar>
+            <Typography
+              variant="h6"
+              color="inherit"
             >
-              Test Blog
-            </Link>
-          </Typography>
-          <h4 style={{marginLeft: '20px'}}>
-            <Link
-              style={{textDecoration: 'none', color: 'black'}}
-              title="see all posts"
-              to="/new"
-            >
-              New post
-            </Link>
-          </h4>
-        </Toolbar>
-      </AppBar>
-    </div>
+              <Link
+                style={{textDecoration: 'none', color: 'black'}}
+                title="see all posts"
+                to="/"
+              >
+                Test Blog
+              </Link>
+            </Typography>
+            <h4 style={{marginLeft: '20px'}}>
+              <Link
+                style={{textDecoration: 'none', color: 'black'}}
+                title="see all posts"
+                to="/new"
+              >
+                New post
+              </Link>
+            </h4>
+          </Toolbar>
+        </AppBar>
+      </div>
     );
   }
 }

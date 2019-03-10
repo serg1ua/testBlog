@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Post from '../components/post';
-
 import * as actions from '../store/reducer/actions';
 import * as reducers from '../store/reducer/reducer';
+
+import Post from '../components/post';
 
 class Posts extends React.Component {
 
@@ -22,7 +22,7 @@ class Posts extends React.Component {
   render() {
     return (
       <div className='posts'>
-        {this.posts()} 
+        {this.posts()}
       </div>
     );
   }
