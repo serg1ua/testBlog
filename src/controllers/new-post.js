@@ -26,7 +26,7 @@ class NewPost extends React.Component {
     autoBind(this);
   }
 
-  submitPost = (event) => {
+  submitPost(event) {
     event.preventDefault();
     const title = this.state.title;
     const body = this.state.body;
@@ -34,7 +34,7 @@ class NewPost extends React.Component {
     setTimeout(() => window.location.pathname = '/', 500);
   }
 
-  postData = (event) => {
+  postData(event) {
     const target = event.target;
     const name = target.name;
     this.setState({
@@ -108,4 +108,6 @@ const mapStateToProps = (state) => reducers.createNewPost(state);
 
 export default connect(mapStateToProps)(NewPost);
 
-// https://documenter.getpostman.com/view/1917440/RzteTChV
+// https: //documenter.getpostman.com / view / 1917440 / RzteTChV
+// https://aws.amazon.com/ru/free/?nc2=h_ql_pr&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc
+// https://www.robinwieruch.de/react-graphql-apollo-tutorial

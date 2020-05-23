@@ -2,26 +2,32 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@material-ui/core": "^3.9.2",
-    "react": "^16.8.4",
-    "react-autobind": "^1.0.6",
-    "react-dom": "^16.8.4",
-    "react-redux": "^6.0.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.8",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "seamless-immutable": "^7.1.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ignore-path .gitignore ."
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@material-ui/core": "3.9.2",
+    "react": "16.8.4",
+    "react-autobind": "1.0.6",
+    "react-dom": "16.8.4",
+    "react-redux": "6.0.1",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "2.1.8",
+    "redux": "4.0.1",
+    "redux-thunk": "2.3.0",
+    "seamless-immutable": "7.1.4"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-standard": "^4.0.1"
   },
   "browserslist": [
     ">0.2%",

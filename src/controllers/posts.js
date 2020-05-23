@@ -12,11 +12,12 @@ class Posts extends React.Component {
     this.props.dispatch(actions.getPosts());
   }
 
-  posts = () => {
+  posts() {
     const { posts } = this.props;
-    return posts.map(post => (
+    console.log(posts);
+    return posts ? posts.map(post => (
       <Post post={post} key={post.id} />
-    ));
+    )) : <div></div>;
   }
 
   render() {

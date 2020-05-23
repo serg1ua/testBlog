@@ -29,13 +29,13 @@ class PostDetails extends React.Component {
     this.props.dispatch(actions.getPostById(id));
   }
 
-  handleChange = (event) => {
+  handleChange(event) {
     this.setState({
       comment: event.target.value
     });
   }
 
-  submit = (event) => {
+  submit(event) {
     event.preventDefault();
     const postId = this.state.postId;
     const body = this.state.comment;
